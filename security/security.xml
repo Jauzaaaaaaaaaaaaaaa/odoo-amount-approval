@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- User < Amount Approver < Administrator: each group implies the one below,
+         so the Purchase field on the user form becomes a 3-option dropdown. -->
+    <record id="group_po_amount_approver" model="res.groups">
+        <field name="name">Amount Approver</field>
+        <field name="category_id" ref="base.module_category_inventory_purchase"/>
+        <field name="implied_ids" eval="[(4, ref('purchase.group_purchase_user'))]"/>
+    </record>
+
+    <record id="purchase.group_purchase_manager" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('group_po_amount_approver'))]"/>
+    </record>
+</odoo>

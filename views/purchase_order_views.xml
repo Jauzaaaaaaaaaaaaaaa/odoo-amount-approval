@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="purchase_order_form_amount_approval" model="ir.ui.view">
+        <field name="name">purchase.order.form.amount.approval</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header/button[@name='button_approve']" position="after">
+                <button name="action_amount_approve" type="object" string="Approve"
+                        class="oe_highlight" invisible="state != 'to_approve'"
+                        groups="purchase_amount_approval.group_po_amount_approver"/>
+                <button name="%(action_purchase_amount_reject_wizard)d" type="action" string="Reject"
+                        invisible="state != 'to_approve'" context="{'default_order_id': id}"
+                        groups="purchase_amount_approval.group_po_amount_approver"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
