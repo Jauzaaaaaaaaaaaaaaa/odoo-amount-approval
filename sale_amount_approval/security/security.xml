@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- All Documents < Amount Approver < Administrator: each group implies the one below,
+         so the approver becomes an extra option in the Sales dropdown on the user form. -->
+    <record id="group_so_amount_approver" model="res.groups">
+        <field name="name">Amount Approver</field>
+        <field name="category_id" ref="base.module_category_sales_sales"/>
+        <field name="implied_ids" eval="[(4, ref('sales_team.group_sale_salesman_all_leads'))]"/>
+    </record>
+
+    <record id="sales_team.group_sale_manager" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('group_so_amount_approver'))]"/>
+    </record>
+</odoo>

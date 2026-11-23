@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sale_amount_reject_wizard,sale.amount.reject.wizard,model_sale_amount_reject_wizard,group_so_amount_approver,1,1,1,1
