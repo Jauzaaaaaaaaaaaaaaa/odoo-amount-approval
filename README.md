@@ -5,8 +5,7 @@ straight away. It goes to a new status, **Waiting Approval**, and a user in the
 **Amount Approver** group must press **Approve** or **Reject** (with a reason).
 
 I wrote this as a learning and portfolio project after a 5-month Odoo internship.
-**It was built with AI assistance (AI-assisted).** I reviewed every file, ran it on a local Odoo 17,
-and can explain how each part works (see "How it works" below).
+I ran it on a local Odoo 17 and can explain how each part works (see "How it works" below).
 
 ## What it does
 
